@@ -1,0 +1,33 @@
+﻿<Window x:Class="DesktopClock.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DesktopClock"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Title="MainWindow" Height="520" Width="720" 
+        Background="{x:Null}" Topmost="True" MouseLeftButtonDown="Window_MouseLeftButtonDown" PreviewMouseWheel="Window_PreviewMouseWheel"  >
+    <Window.Resources>
+        <Style TargetType="Label">
+            <Setter Property="Foreground" Value="CadetBlue"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
+    <Viewbox x:Name="ViewBox_Clock" RenderTransformOrigin="0.5,0.5">
+        <Viewbox.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform ScaleX="0.5" ScaleY="0.5"/>
+                <SkewTransform/>
+                <RotateTransform/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </Viewbox.RenderTransform>
+        <StackPanel>
+            <Label x:Name="Lable_ModernClock" Content="24 : 60 : 60" FontFamily="Source Code" FontSize="45"/>
+            <Label x:Name="Lable_ChineseClock" Content="子正 阳气始萌"   FontSize="60"  FontFamily="书体坊禚效锋行草体" FontWeight="Bold" Foreground="White"  />
+            <Label x:Name="Lable_Day" Content="03-12-19"   FontSize="30" FontFamily="Source Code" />
+        </StackPanel>
+    </Viewbox>
+</Window>
